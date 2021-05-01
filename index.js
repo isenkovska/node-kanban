@@ -17,11 +17,10 @@ app.get('/card', (req, res) => {
     res.send(cards);
 })
 
-app.delete('/card/:cardID', (req, res) => {
-    const cardId = req.params.cardID;
+app.delete('/card/:cardId', (req, res) => {
+    const cardId = req.params.cardId;
     cards = cards.filter(el => el.id !== cardId);
     res.send(cards);
-    console.log(cards);
 })
 
 app.listen(PORT, () => {
