@@ -4,7 +4,6 @@ function routes(app) {
         res.send(cards);
     });
 
-
     let cards = [
         {id: '1', name: 'First Card', status: 'todo', priority: 2},
         {id: '2', name: 'Second Card', status: 'progress', priority: 5},
@@ -35,5 +34,7 @@ function routes(app) {
 
         res.send('Card updated');
     });
+
 }
+
 module.exports = routes;
