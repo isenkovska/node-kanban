@@ -30,10 +30,18 @@ app.delete('/card/:cardId', (req, res) => {
 })
 
 app.post('/card', (req, res) => {
-    console.log(req);
     const card = req.body;
     cards.push({id: Math.random().toString(), ...card});
     res.send('Card created');
+})
+
+app.patch('/card/:cardId', (req, res) => {
+    const cardId = req.params.cardId;
+    const card = req.body;
+
+    cards = cards.map(el => el.id === cardId ? ({ ...card, id: el.id}) : el);
+
+    res.send('Card updated');
 })
 
 app.listen(PORT, () => {
